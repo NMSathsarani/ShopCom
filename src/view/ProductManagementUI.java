@@ -4,19 +4,127 @@
  */
 package view;
 
+import controller.*;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ME
  */
 public class ProductManagementUI extends javax.swing.JFrame {
 
+    
+    /*private int categoryCounter = 1; 
+    private int deviceCounter = 1;
+    private int categoryCounter = 1;
+    private int categoryCounter = 1;*/
+    
     /**
      * Creates new form ProductManagementUI
      */
     public ProductManagementUI() {
         initComponents();
+        initializeComponents();
     }
 
+    
+    private void initializeComponents() {
+        
+        txt_category_id.setEditable(false); 
+        txt_device_id.setEditable(false);
+        txt_brand_id.setEditable(false);
+        txt_model_id.setEditable(false);
+        
+        btn_add_category.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addCategory();
+            }
+        });
+        btn_add_devices.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addDevice();
+            }
+        });
+        btn_add_brands.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addBrand();
+            }
+        });
+        btn_add_model.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addModel();
+            }
+        });
+    }
+    
+    private void addCategory() {
+        // In a real-world scenario, you would insert the data into the database
+        // For this example, we'll just display a message and increment the counter
+
+        // Get data from input fields
+        String category_name = txt_category_name.getText();
+
+        // Increment the product counter and update the product ID field
+        /*categoryCounter++;
+        txt_category_name.setText(String.valueOf(categoryCounter));*/
+
+        // Display a message (replace this with your database insertion logic)
+        JOptionPane.showMessageDialog(this, "Category saved successfully.");
+    }
+    
+    private void addDevice() {
+        // In a real-world scenario, you would insert the data into the database
+        // For this example, we'll just display a message and increment the counter
+
+        // Get data from input fields
+        String device_name = txt_device_name.getText();
+        //double boughtPrice = Double.parseDouble(boughtPriceField.getText());
+
+        // Increment the product counter and update the product ID field
+        /*deviceCounter++;
+        productIdField.setText(String.valueOf(deviceCounter));*/
+
+        // Display a message (replace this with your database insertion logic)
+        JOptionPane.showMessageDialog(this, "Device saved successfully.");
+    }
+    
+    private void addBrand() {
+        // In a real-world scenario, you would insert the data into the database
+        // For this example, we'll just display a message and increment the counter
+
+        // Get data from input fields
+        String description = txt_brand_name.getText();
+        
+        // Increment the product counter and update the product ID field
+        /*productCounter++;
+        productIdField.setText(String.valueOf(productCounter));*/
+
+        // Display a message (replace this with your database insertion logic)
+        JOptionPane.showMessageDialog(this, "Brand saved successfully.");
+    }
+    
+    private void addModel() {
+        // In a real-world scenario, you would insert the data into the database
+        // For this example, we'll just display a message and increment the counter
+
+        // Get data from input fields
+        String description = txt_model_name.getText();
+        
+        // Increment the product counter and update the product ID field
+        /*productCounter++;
+        productIdField.setText(String.valueOf(productCounter));*/
+
+        // Display a message (replace this with your database insertion logic)
+        JOptionPane.showMessageDialog(this, "Product saved successfully.");
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,20 +142,21 @@ public class ProductManagementUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        e_set_cat_name = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        e_set_dev_name = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        e_set_brand_name = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        e_set_model_name = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         TabProduct = new javax.swing.JPanel();
         jSplitPane2 = new javax.swing.JSplitPane();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -91,7 +200,10 @@ public class ProductManagementUI extends javax.swing.JFrame {
         btn_add_model = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
         cmb_brand_id = new javax.swing.JComboBox<>();
+        jPanel13 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         jMenu3.setText("jMenu3");
 
@@ -104,36 +216,36 @@ public class ProductManagementUI extends javax.swing.JFrame {
 
         TabItem.setLayout(new java.awt.BorderLayout());
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setBackground(new java.awt.Color(242, 22, 242));
-        jLabel1.setText("Product ID");
+        jLabel1.setText("Select Category Name");
 
-        jTextField1.setText("jTextField1");
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel2.setText("jLabel2");
+        e_set_cat_name.setForeground(new java.awt.Color(255, 0, 0));
+        e_set_cat_name.setText("jLabel7");
 
-        jTextField2.setText("jTextField2");
-
-        jLabel3.setText("jLabel3");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
-
-        jLabel4.setText("jLabel4");
-
-        jTextField3.setText("jTextField3");
-
-        jLabel5.setText("jLabel5");
+        jLabel2.setText("Select Device Name");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel6.setText("jLabel6");
+        e_set_dev_name.setForeground(new java.awt.Color(255, 0, 0));
+        e_set_dev_name.setText("jLabel7");
 
-        jTextField4.setText("jTextField4");
+        jLabel3.setText("Select Brand Name");
 
-        jButton1.setText("jButton1");
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        e_set_brand_name.setForeground(new java.awt.Color(255, 0, 0));
+        e_set_brand_name.setText("jLabel7");
+
+        jLabel4.setText("Select Model Name");
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        e_set_model_name.setForeground(new java.awt.Color(255, 0, 0));
+        e_set_model_name.setText("jLabel7");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -142,25 +254,20 @@ public class ProductManagementUI extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(232, 232, Short.MAX_VALUE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jButton1))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(e_set_model_name)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jComboBox4, 0, 200, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addComponent(e_set_brand_name)
+                        .addComponent(jLabel3)
+                        .addComponent(e_set_dev_name)
+                        .addComponent(jLabel2)
+                        .addComponent(e_set_cat_name)
+                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(299, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,36 +275,68 @@ public class ProductManagementUI extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(e_set_cat_name)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(e_set_dev_name)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(e_set_brand_name)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
+                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jButton1)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addComponent(e_set_model_name)
+                .addContainerGap(222, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel6);
 
         jSplitPane1.setLeftComponent(jScrollPane1);
-        jSplitPane1.setRightComponent(jScrollPane2);
+
+        jPanel15.setLayout(new java.awt.BorderLayout());
+
+        jPanel16.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel16.setPreferredSize(new java.awt.Dimension(260, 50));
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 260, Short.MAX_VALUE)
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        jPanel15.add(jPanel16, java.awt.BorderLayout.PAGE_START);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable2);
+
+        jPanel15.add(jScrollPane6, java.awt.BorderLayout.CENTER);
+
+        jSplitPane1.setRightComponent(jPanel15);
 
         TabItem.add(jSplitPane1, java.awt.BorderLayout.CENTER);
 
@@ -211,7 +350,8 @@ public class ProductManagementUI extends javax.swing.JFrame {
         jPanel3.setPreferredSize(new java.awt.Dimension(400, 520));
         jPanel3.setLayout(new java.awt.BorderLayout());
 
-        jPanel5.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel5.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel5.setPreferredSize(new java.awt.Dimension(400, 220));
 
         jLabel8.setText("Add Categories");
@@ -232,23 +372,25 @@ public class ProductManagementUI extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txt_category_name, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10)
-                                    .addComponent(txt_category_id, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(96, 96, 96)
-                                        .addComponent(btn_add_category)))))))
-                .addContainerGap(170, Short.MAX_VALUE))
+                    .addComponent(txt_category_id, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(txt_category_name, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                            .addGap(22, 22, 22)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel8)
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addGap(8, 8, 8)
+                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel9)
+                                        .addComponent(jLabel10)
+                                        .addGroup(jPanel5Layout.createSequentialGroup()
+                                            .addGap(96, 96, 96)
+                                            .addComponent(btn_add_category)))))
+                            .addGap(32, 32, 32))))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,7 +407,7 @@ public class ProductManagementUI extends javax.swing.JFrame {
                 .addComponent(txt_category_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_add_category)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel3.add(jPanel5, java.awt.BorderLayout.PAGE_START);
@@ -273,7 +415,8 @@ public class ProductManagementUI extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 280));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
-        jPanel7.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel7.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel7.setPreferredSize(new java.awt.Dimension(400, 300));
 
         jLabel11.setText("Add Devices");
@@ -314,7 +457,7 @@ public class ProductManagementUI extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(125, 125, 125)
                         .addComponent(btn_add_devices)))
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -335,7 +478,7 @@ public class ProductManagementUI extends javax.swing.JFrame {
                 .addComponent(txt_device_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_add_devices)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel7, java.awt.BorderLayout.PAGE_START);
@@ -349,7 +492,8 @@ public class ProductManagementUI extends javax.swing.JFrame {
         jPanel9.setPreferredSize(new java.awt.Dimension(400, 220));
         jPanel9.setLayout(new java.awt.BorderLayout());
 
-        jPanel10.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel10.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel10.setPreferredSize(new java.awt.Dimension(400, 220));
 
         jLabel18.setText("Add Brands");
@@ -389,7 +533,7 @@ public class ProductManagementUI extends javax.swing.JFrame {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(125, 125, 125)
                         .addComponent(btn_add_brands)))
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,14 +550,15 @@ public class ProductManagementUI extends javax.swing.JFrame {
                 .addComponent(txt_brand_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_add_brands)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel9.add(jPanel10, java.awt.BorderLayout.PAGE_START);
 
         jPanel8.add(jPanel9, java.awt.BorderLayout.PAGE_START);
 
-        jPanel12.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel12.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel12.setPreferredSize(new java.awt.Dimension(400, 300));
 
         jLabel22.setText("Add Models");
@@ -460,7 +605,7 @@ public class ProductManagementUI extends javax.swing.JFrame {
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGap(123, 123, 123)
                         .addComponent(btn_add_model)))
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -485,7 +630,7 @@ public class ProductManagementUI extends javax.swing.JFrame {
                 .addComponent(txt_model_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_add_model)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -508,7 +653,41 @@ public class ProductManagementUI extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jPanel1);
 
         jSplitPane2.setLeftComponent(jScrollPane4);
-        jSplitPane2.setRightComponent(jScrollPane5);
+
+        jPanel13.setLayout(new java.awt.BorderLayout());
+
+        jPanel14.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel14.setPreferredSize(new java.awt.Dimension(393, 50));
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 393, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        jPanel13.add(jPanel14, java.awt.BorderLayout.PAGE_START);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable1);
+
+        jPanel13.add(jScrollPane5, java.awt.BorderLayout.CENTER);
+
+        jSplitPane2.setRightComponent(jPanel13);
 
         TabProduct.add(jSplitPane2, java.awt.BorderLayout.CENTER);
 
@@ -569,9 +748,15 @@ public class ProductManagementUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmb_brand_id;
     private javax.swing.JComboBox<String> cmb_cat_name;
     private javax.swing.JComboBox<String> cmb_dev_id;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel e_set_brand_name;
+    private javax.swing.JLabel e_set_cat_name;
+    private javax.swing.JLabel e_set_dev_name;
+    private javax.swing.JLabel e_set_model_name;
     private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -592,8 +777,6 @@ public class ProductManagementUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu3;
@@ -601,6 +784,10 @@ public class ProductManagementUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -610,19 +797,15 @@ public class ProductManagementUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField txt_brand_id;
     private javax.swing.JTextField txt_brand_name;
